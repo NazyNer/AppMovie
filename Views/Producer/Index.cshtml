@@ -1,0 +1,44 @@
+@model IEnumerable<AppMovie.Models.Producer>
+@{
+    ViewData["Title"] = "Productores";
+}
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a class="botonCrear" asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProducerName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProducerName)
+            </td>
+            <td>
+                <a class="botonEditar" asp-action="Edit" asp-route-id="@item.ProducerId">Editar</a> |
+                <a class="btn botonEliminar" onclick = "eliminarProductor(@item.ProducerId);">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

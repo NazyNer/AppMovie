@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+<div class="Home">
+  <div class="text-center">
+    <div class="Top3">
+      <h1 class="display-4">Bienvenidos</h1>
+      <p><span class="isolation">🍟🍔</span>A la mejor web para ver pelis en hd y online <span class="isolation">🎥🎥</span></p>
+    </div>
+  @* Titutlo Cards *@
+  <div class="Top3">
+    <h1 class="display-4 text-center">Estreno De la semana</h1>
+  </div>
+  @* /Titutlo Cards *@
+  @* Cards *@
+    <div class="row align-items-center">
+      <div class="col">
+        <div class="sticky-bottom">
+    <div class="flip-container">
+      <div class="card top1">
+        <div class="frente">
+        </div>
+        <div class="dorso top1D">
+          <h3>JW 3</h3>
+          <p>Ver Trailer</p>
+          <button onclick="Ver1();">Ver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <div class="col">
+        <div class="sticky-bottom">
+    <div class="flip-container">
+      <div class="card top2">
+        <div class="frente">
+        </div>
+        <div class="dorso top2D">
+          <h3>Shirley</h3>
+          <p>Ver Trailer</p>
+          <button onclick="Ver2();">Ver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <div class="col">
+        <div class="sticky-bottom">
+    <div class="flip-container">
+      <div class="card top3">
+        <div class="frente">
+        </div>
+        <div class="dorso top3D">
+          <h3>Mes frères et moi</h3>
+          <p>Ver Trailer</p>
+          <button onclick="Ver3();">Ver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+</div>
+  @* /Cards *@
+
+
+<script>
+  function Ver1() {
+    window.location.assign("https://www.youtube.com/watch?v=9m9yRauMJIQ&t=10s&ab_channel=UniversalSpain");
+}
+function Ver2() {
+    window.location.assign("https://www.youtube.com/watch?v=uL9liCVBZcE&ab_channel=CineMovsTrailers");
+}
+function Ver3() {
+    window.location.assign("https://www.youtube.com/watch?v=Zwp4we9aIxY&ab_channel=SeptemberFilmDistribution");
+}
+</script>

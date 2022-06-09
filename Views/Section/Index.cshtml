@@ -1,0 +1,46 @@
+@model IEnumerable<AppMovie.Models.Section>
+@{
+    ViewData["Title"] = "Secciones";
+}
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+</head>
+<body>
+<p class="Shadow">
+    <a class="botonCrear" asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SectionName)
+            </td>
+            <td>
+                <a class="botonEditar" asp-action="Edit" asp-route-id="@item.SectionId">Editar</a> 
+                <a class="btn botonEliminar" onclick = "eliminarSeccion(@item.SectionId);">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<script src="../wwwroot/js/site.js"></script>
+</body>
+</html>

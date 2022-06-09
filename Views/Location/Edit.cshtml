@@ -1,0 +1,47 @@
+@model AppMovie.Models.Location
+@{
+    ViewData["Title"] = "Ubicacion";
+}
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+<div class="HomeV2">
+    <h4 class="sombraTexto sizeText">Ubicacion</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="LocationId" />
+                <div class="form-group">
+                    <label asp-for="LocationName" class="control-label sombraTexto"></label>
+                    <input asp-for="LocationName" class="form-control" />
+                    <span asp-validation-for="LocationName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CountryID" class="control-label sombraTexto"></label>
+                    <select asp-for="CountryID" class="form-control" asp-items="ViewBag.CountryID"></select>
+                    <span asp-validation-for="CountryID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Guardar" class="btn botonCrearV2" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a class="btn botonVolver" asp-action="Index">Volver a la lista</a>
+    </div>
+</div>
+</body>
+</html>
