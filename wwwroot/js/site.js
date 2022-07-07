@@ -44,3 +44,9 @@ function eliminarPelicula(id) {
     if (eliminar) {
     location.href = "../../Movie/DeleteConfirmed/" + id;}
 }
+function eliminarAlquileres(id) {
+    console.log(id);
+    var eliminar = confirm("Está seguro de eliminar este Alquiler?");
+    if (eliminar) {
+    location.href = "../../Rental/DeleteConfirmed/" + id;}
+}

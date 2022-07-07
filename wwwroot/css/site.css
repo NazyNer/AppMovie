@@ -198,12 +198,6 @@ body {
   text-shadow: 4px 4px 4px #5f127c;
 }
 /* /Titutlo Cards */
- /* Dont Dark Mode */
-
-.isolation{
-  isolation: isolate;
-}
-/* /Dont Dark Mode */
 
 .Trailers{
     position: absolute;
@@ -318,7 +312,7 @@ th, td{
   margin: 5px;
 }
 .botonVolver:hover{
-  box-shadow: 0 12px 16px 0 maroon, 0 17px 50px 0 rgb(46, 12, 12);
+  box-shadow: 0 12px 16px 0 rgba(128, 0, 0, 0.329);
   color: #fff;
 }
 
@@ -326,11 +320,13 @@ th, td{
   background-color: rgba(255, 255, 255, 0.283);
   border-radius: 50px;
   backdrop-filter: blur(4px);
+  padding-bottom: 35px;
 }
 .HomeV2{
   background-color: rgba(255, 255, 255, 0.571);
   border-radius: 10px;
   backdrop-filter: blur(4px);
+  padding-bottom: 35px;
 }
 .sombraTexto{
   text-shadow:4px 4px 4px #5f127c;
@@ -346,7 +342,9 @@ th, td{
   margin: 15px;
 }
 .nav-link:hover{
-  box-shadow: 0 12px 16px 0 #5f127c, 0 17px 50px 0 #8a32aa;
+  box-shadow: 0 2px 16px 0 #5f127c;
+  border-radius: 50px;
+  color: gold !important;
 }
 
 .form-control {
@@ -358,4 +356,7 @@ th, td{
 .form-control:focus {
   border-color: #5f127c;
   box-shadow: 0 12px 16px 0 #5f127c, 0 17px 50px 0 #8a32aa;
+}
+.row{
+  justify-content: space-around;
 }

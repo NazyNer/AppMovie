@@ -1,0 +1,51 @@
+@model IEnumerable<AppMovie.Models.Rental>
+@{
+    ViewData["Title"] = "Alquileres";
+}
+@{
+    Layout = "_Layout";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a class="botonCrear" asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Partner)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Partner.PartnerName)
+            </td>
+            <td>
+                <a class="botonEditar" asp-action="Edit" asp-route-id="@item.RentalID">Editar</a> |
+                <a class="btn botonEliminar" onclick = "eliminarAlquileres(@item.RentalID)">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

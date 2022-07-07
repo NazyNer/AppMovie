@@ -1,0 +1,68 @@
+@model AppMovie.Models.Rental
+@{
+    ViewData["Title"] = "Alquileres";
+}
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Crear</title>
+</head>
+<body>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="HomeV2">
+    <h4 class="sombraTexto sizeText">Alquiler</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="RentalDate" class="control-label sombraTexto"></label>
+                    <input asp-for="RentalDate" class="form-control" />
+                    <span asp-validation-for="RentalDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PartnerID" class="control-label"></label>
+                    <select asp-for="PartnerID" class ="form-control" asp-items="ViewBag.PartnerID"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Crear" class="btn botonCrearV2" />
+                </div>
+            </form>
+                <!-- Button trigger modal -->
+        </div>
+    </div>
+
+    <div>
+        <a class="btn botonVolver" asp-action="Index">Volver a la lista</a>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Launch static backdrop modal
+        </button> 
+    </div>
+</div>
+
+</body>
+</html>

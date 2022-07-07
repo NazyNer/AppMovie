@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\arca_\\Desktop\\Nueva carpeta\\AppMovie\\AppMovie.csproj": {}
+    "C:\\Users\\PC\\Desktop\\arcangel\\AppMovie\\AppMovie.csproj": {}
   },
   "projects": {
-    "C:\\Users\\arca_\\Desktop\\Nueva carpeta\\AppMovie\\AppMovie.csproj": {
+    "C:\\Users\\PC\\Desktop\\arcangel\\AppMovie\\AppMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arca_\\Desktop\\Nueva carpeta\\AppMovie\\AppMovie.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Desktop\\arcangel\\AppMovie\\AppMovie.csproj",
         "projectName": "AppMovie",
-        "projectPath": "C:\\Users\\arca_\\Desktop\\Nueva carpeta\\AppMovie\\AppMovie.csproj",
-        "packagesPath": "C:\\Users\\arca_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\arca_\\Desktop\\Nueva carpeta\\AppMovie\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Desktop\\arcangel\\AppMovie\\AppMovie.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Desktop\\arcangel\\AppMovie\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\arca_\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
