@@ -1,3 +1,3 @@
-Aplicación de gestión de alquiler de películas.
+Aplicación de gestión de alquiler de películas. 🎞🎞🍟🎬🎬
 
-Movie rental management application.
+Movie rental management application.🎞🎞🍟🎬🎬
