@@ -49,5 +49,5 @@ Mkfile.old
 dkms.conf
 
 # folders
-.bin
-.vscode
+bin
+vscode
