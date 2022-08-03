@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mStc0DCzUBFOf3D4HmLkqitS7IMj/5Z+7IIrFszSaqTJDULVfY0OvBfVJvoJacy3BP+ibfdFEp7ZWWU+FA7j3Q==",
+  "dgSpecHash": "uC0yuvcumYv1uzGE0V+XpnmkmG7xX0glCDaDcfe2cE4WaN+GuVFoLxecAVPgGBVfxuo70YBE8QHlEE4yyw5/Vw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\arcangel\\AppMovie\\AppMovie.csproj",
+  "projectFilePath": "C:\\Users\\PC\\Desktop\\AppMovie\\AppMovie.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

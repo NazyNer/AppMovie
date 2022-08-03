@@ -9762,11 +9762,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Desktop\\arcangel\\AppMovie\\AppMovie.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\Desktop\\AppMovie\\AppMovie.csproj",
       "projectName": "AppMovie",
-      "projectPath": "C:\\Users\\PC\\Desktop\\arcangel\\AppMovie\\AppMovie.csproj",
+      "projectPath": "C:\\Users\\PC\\Desktop\\AppMovie\\AppMovie.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Desktop\\arcangel\\AppMovie\\obj\\",
+      "outputPath": "C:\\Users\\PC\\Desktop\\AppMovie\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
