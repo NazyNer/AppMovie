@@ -199,31 +199,6 @@ body {
 }
 /* /Titutlo Cards */
 
-.Trailers{
-    position: absolute;
-    background-color: white;
-
-}
-
-.video-tamaño{
-  max-width: 840px;
-  text-align: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-.Cont-Trailer{
-    position: relative;
-    width: 600px;
-    height: 400px;
-}
-.video{
-  width: 100%;
-  height: auto;
-}
-
 table{
   background-color: rgba(96, 18, 124, 0.509);
   backdrop-filter: blur(4px);
@@ -321,6 +296,7 @@ th, td{
   border-radius: 50px;
   backdrop-filter: blur(4px);
   padding-bottom: 35px;
+  padding-top: 5px;
 }
 .HomeV2{
   background-color: rgba(255, 255, 255, 0.571);
@@ -341,10 +317,21 @@ th, td{
 .margin{
   margin: 15px;
 }
-.nav-link:hover{
-  box-shadow: 0 2px 16px 0 #5f127c;
-  border-radius: 50px;
-  color: gold !important;
+.nav-link{
+  font-family: monospace;
+  font-size: 15px;
+  color: #FAFAFA;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: 2px solid #FAFAFA;
+  background: #252525;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.nav-link:active{
+  box-shadow: none;
+  transform: translate(3px, 3px);
 }
 
 .form-control {
@@ -360,3 +347,44 @@ th, td{
 .row{
   justify-content: space-around;
 }
+
+
+/* boton rental */
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+/* /boton rental */

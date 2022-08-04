@@ -48,19 +48,32 @@
                     <label asp-for="PartnerID" class="control-label"></label>
                     <select asp-for="PartnerID" class ="form-control" asp-items="ViewBag.PartnerID"></select>
                 </div>
+
+                @* Table *@
+                <table class="table">
+                  <thead>
+                      <tr>
+                        <th>Titulo de la pelicula</th>
+                          <th>
+                            <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                              <span class="button-content">pelicula</span>
+                            </button> 
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody id="tbody-peliculas">
+                  </tbody>
+              </table>
+                @* /table *@
+                <br>
                 <div class="form-group">
                     <input type="submit" value="Crear" class="btn botonCrearV2" />
                 </div>
             </form>
-                <!-- Button trigger modal -->
+                <div>
+                    <a class="btn botonVolver" asp-action="Index">Volver a la lista</a>
+                </div>
         </div>
-    </div>
-
-    <div>
-        <a class="btn botonVolver" asp-action="Index">Volver a la lista</a>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          Launch static backdrop modal
-        </button> 
     </div>
 </div>
 
