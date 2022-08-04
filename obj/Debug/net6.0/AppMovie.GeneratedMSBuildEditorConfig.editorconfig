@@ -8,197 +8,197 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AppMovie
 build_property.RootNamespace = AppMovie
-build_property.ProjectDir = c:\Users\PC\Desktop\AppMovie\
+build_property.ProjectDir = C:\Users\PC\Desktop\AppMovie\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\PC\Desktop\AppMovie
+build_property.MSBuildProjectDirectory = C:\Users\PC\Desktop\AppMovie
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Country/Create.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Country/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Country/Delete.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Country/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Country/Details.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Country/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Country/Edit.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Country/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Country/Index.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Country/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Gender/Create.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Gender/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Gender/Delete.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Gender/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Gender/Details.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Gender/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Gender/Edit.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Gender/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Gender/Index.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Gender/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Home/Index.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Home/Privacy.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Location/Create.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Location/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Location/Delete.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Location/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Location/Details.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Location/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Location/Edit.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Location/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Location/Index.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Location/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Movie/Create.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Movie/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Movie/Delete.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Movie/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Movie/Details.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Movie/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Movie/Edit.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Movie/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Movie/Index.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Movie/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Partner/Create.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Partner/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydG5lclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Partner/Delete.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Partner/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydG5lclxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Partner/Details.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Partner/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydG5lclxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Partner/Edit.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Partner/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydG5lclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Partner/Index.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Partner/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydG5lclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Producer/Create.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Producer/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Producer/Delete.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Producer/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjZXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Producer/Details.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Producer/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Producer/Edit.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Producer/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Producer/Index.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Producer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Rental/Create.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Rental/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Rental/Delete.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Rental/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Rental/Details.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Rental/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Rental/Edit.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Rental/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Rental/Index.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Rental/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Section/Create.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Section/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Section/Delete.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Section/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvblxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Section/Details.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Section/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvblxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Section/Edit.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Section/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Section/Index.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Section/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Shared/Error.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/_ViewImports.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/_ViewStart.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/PC/Desktop/AppMovie/Views/Shared/_Layout.cshtml]
+[C:/Users/PC/Desktop/AppMovie/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4skxq1ckwj
