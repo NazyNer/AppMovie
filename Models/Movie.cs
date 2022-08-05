@@ -41,5 +41,7 @@ namespace AppMovie.Models
 
         [Display(Name = "Productor")]
         public virtual Producer? Producer { get; set; }
+
+        public bool estaAlquilada { get; set; }
     }
 }

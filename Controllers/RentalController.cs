@@ -48,6 +48,7 @@ namespace AppMovie.Controllers
         public IActionResult Create()
         {
             ViewData["PartnerID"] = new SelectList(_context.Partner, "PartnerID", "PartnerName");
+            ViewData["MovieID"] = new SelectList(_context.Movie.Where(x => x.estaAlquilada == false), "MovieID", "MovieName");
             return View();
         }
 
