@@ -350,6 +350,12 @@ th, td{
 
 
 /* boton rental */
+
+.marginTable{
+  border-radius: 10px;
+  margin-top: 6px;
+}
+
 .button {
   position: relative;
   overflow: hidden;

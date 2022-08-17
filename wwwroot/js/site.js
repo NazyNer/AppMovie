@@ -50,3 +50,46 @@ function eliminarAlquileres(id) {
     if (eliminar) {
     location.href = "../../Rental/DeleteConfirmed/" + id;}
 }
+
+function AgregarPeliculas() {
+    console.log("Funcion de agregar pelicula temporal activada")
+    var movieID = $("#MovieID").val();
+
+    $.ajax({
+        type: "POST",
+        url: "../../Rentals/AgregarPeliculas",
+        data: { MovieID: movieID },
+        success: function (resultado) {
+            if (resultado == true) {
+                console.log("Se guardo la pelicula correctamente");
+                alert("Se guardo la pelicula correctamente");
+                //$("#modal").modal("hide");
+                //BuscarPeliculas();
+                //Location.href = "../../Rentals/Create"
+            } else {
+                alert("No se pudo agregar la pelicula, intente nuevamente");
+                console.log("No se pudo agregar la pelicula, intente nuevamente");
+            }
+        },
+        error: function(_result) {
+            console.log("Error debido a: " + _result)
+        },
+    });
+}
+
+function CancelRental() {
+    $.ajax({
+        type: "POST",
+        url: "../../Rentals/CancelarAlquiler",
+        data: {},
+        success: function(result){
+            if(resultado = true)
+            {
+                location.href = "../../Rentals/Index";
+            }
+        },
+        error(result){
+
+        }
+    })
+}

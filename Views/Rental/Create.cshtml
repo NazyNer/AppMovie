@@ -50,7 +50,7 @@
                 </div>
 
                 @* Table *@
-                <table class="table">
+                <table class="table marginTable">
                   <thead>
                       <tr>
                         <th>Titulo de la pelicula</th>
@@ -69,10 +69,10 @@
                 <div class="form-group">
                     <input type="submit" value="Crear" class="btn botonCrearV2" />
                 </div>
-            </form>
                 <div>
-                    <a class="btn botonVolver" asp-action="Index">Volver a la lista</a>
+                    <button type="button" class="btn botonVolver" asp-action="Index" onclick="CancelRental();">Cancelar Alquiler</button>
                 </div>
+            </form>
         </div>
     </div>
 </div>

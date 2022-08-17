@@ -66,6 +66,8 @@ namespace AppMovie.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["PartnerID"] = new SelectList(_context.Partner, "PartnerID", "PartnerName", rental.PartnerID);
+            ViewData["MovieID"] = new SelectList(_context.Movie, "MovieID", "MovieName");
+            ViewData["MovieID"] = new SelectList(_context.Movie.Where(x => x.estaAlquilada == false), "MovieID", "MovieName");
             return View(rental);
         }
 
@@ -158,6 +160,90 @@ namespace AppMovie.Controllers
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        public JsonResult AgregarPeliculas(int MovieID)
+        {
+            var resultado = true;
+
+            using (var transaccion = _context.Database.BeginTransaction())
+            {
+                try
+                {
+                    var movie = (from a in _context.Movie where a.MovieID == MovieID select a).SingleOrDefault();
+                    movie.estaAlquilada = true;
+                    _context.SaveChanges();
+
+                    var movieTemp = new RentalDetailTemp
+                    {
+                        MovieID = movie.MovieID,
+                        MovieName = movie.MovieName
+                    };
+                    _context.RentalDetailTemp.Add(movieTemp);
+                    _context.SaveChanges();
+                    transaccion.Commit();
+                }
+                catch (System.Exception)
+                {
+                    transaccion.Rollback();
+                    resultado = false;
+                }
+            }
+            ViewData["MovieID"] = new SelectList(_context.Movie.Where(x => x.estaAlquilada == false), "MovieID", "MovieName");
+            return Json(resultado);
+        }
+
+        public JsonResult CancelarAlquiler()
+        {
+            var resultado = true;
+
+            using (var transaccion = _context.Database.BeginTransaction())
+            {
+                try
+                {
+                    var rentalTemp = (from a in _context.RentalDetailTemp select a).ToList();
+
+                    foreach (var item in rentalTemp)
+                    {
+                        var movie = (from a in _context.Movie where a.MovieID == item.MovieID select a).SingleOrDefault();
+                        movie.estaAlquilada = false;
+                        _context.SaveChanges();
+                    }
+
+                    _context.RentalDetailTemp.RemoveRange(rentalTemp);
+                    _context.SaveChanges();
+
+                    transaccion.Commit();
+
+                }
+                catch (System.Exception)
+                {
+                    transaccion.Rollback();
+                    resultado = false;
+                }
+            }
+            ViewData["MovieID"] = new SelectList(_context.Movie.Where(x => x.estaAlquilada == false), "MovieID", "MovieName");
+            return Json(resultado);
+        }
+
+
+        public JsonResult BuscarPeliculas()
+        {
+            List<RentalDetailTemp> listadoPeliculasDT = new List<RentalDetailTemp>();
+
+            var peliculasDT = (from a in _context.RentalDetailTemp select a).ToList();
+
+            foreach (var item in peliculasDT)
+            {
+                var guardarPelicula = new RentalDetailTemp
+                {
+                    MovieID = item.MovieID,
+                    MovieName = item.MovieName
+                };
+                listadoPeliculasDT.Add(guardarPelicula);
+            }
+
+            return Json(listadoPeliculasDT);
         }
 
         private bool RentalExists(int id)
