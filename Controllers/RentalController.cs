@@ -246,6 +246,17 @@ namespace AppMovie.Controllers
             return Json(listadoPeliculasDT);
         }
 
+        public JsonResult SearchMovieTmp()
+        {
+            List<RentalDetailTemp> ListadoMovieTmp = new List<RentalDetailTemp>();
+            var rentalDetailTemp = (from a in _context.RentalDetailTemp select a).ToList();
+            foreach (var item in rentalDetailTemp)
+            {
+                ListadoMovieTmp.Add(item);
+            }
+            return Json(ListadoMovieTmp);
+        }
+        
         private bool RentalExists(int id)
         {
           return (_context.Rental?.Any(e => e.RentalID == id)).GetValueOrDefault();

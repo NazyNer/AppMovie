@@ -57,7 +57,7 @@ function AgregarPeliculas() {
 
     $.ajax({
         type: "POST",
-        url: "../../Rentals/AgregarPeliculas",
+        url: "../../Rental/AgregarPeliculas",
         data: { MovieID: movieID },
         success: function (resultado) {
             if (resultado == true) {
@@ -80,13 +80,34 @@ function AgregarPeliculas() {
 function CancelRental() {
     $.ajax({
         type: "POST",
-        url: "../../Rentals/CancelarAlquiler",
+        url: "../../Rental/CancelarAlquiler",
         data: {},
         success: function(result){
             if(resultado = true)
             {
                 location.href = "../../Rentals/Index";
             }
+        },
+        error(result){
+
+        }
+    })
+}
+
+function SearchMovieTmp () {
+    $.ajax({
+        type: "GET",
+        url: "../../Rental/SearchMovieTmp",
+        data: {},
+        success: function(ListadoMovieTmp){
+            $.each(ListadoMovieTmp, function(index, item){
+                $("#tbody-peliculas").append(
+                    `<tr>
+                        <th>${ item.movieName }</th>
+                        <th></th>
+                    </tr>`
+                );
+            });
         },
         error(result){
 

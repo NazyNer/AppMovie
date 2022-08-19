@@ -26,8 +26,7 @@
         <select id="MovieID" class="form-control" asp-items="ViewBag.MovieID"></select>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <a class="btn btn-primary" onclick="AgregarPeliculas()">Agregar pelicula</a>
       </div>
     </div>
   </div>
@@ -48,10 +47,15 @@
                     <label asp-for="PartnerID" class="control-label"></label>
                     <select asp-for="PartnerID" class ="form-control" asp-items="ViewBag.PartnerID"></select>
                 </div>
-
-                @* Table *@
-                <table class="table marginTable">
-                  <thead>
+                <br>
+                <div class="form-group">
+                    <input type="submit" value="Crear" class="btn botonCrearV2" />
+                    <button type="button" class="btn botonVolver" asp-action="Index" onclick="CancelRental();">Cancelar Alquiler</button>
+                </div>
+            </form>
+               @* Table *@
+              <table class="table marginTable">
+                <thead>
                       <tr>
                         <th>Titulo de la pelicula</th>
                           <th>
@@ -60,19 +64,11 @@
                             </button> 
                           </th>
                       </tr>
-                  </thead>
-                  <tbody id="tbody-peliculas">
-                  </tbody>
+                </thead>
+                <tbody id="tbody-peliculas">
+                </tbody>
               </table>
                 @* /table *@
-                <br>
-                <div class="form-group">
-                    <input type="submit" value="Crear" class="btn botonCrearV2" />
-                </div>
-                <div>
-                    <button type="button" class="btn botonVolver" asp-action="Index" onclick="CancelRental();">Cancelar Alquiler</button>
-                </div>
-            </form>
         </div>
     </div>
 </div>
