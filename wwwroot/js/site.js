@@ -63,9 +63,9 @@ function AgregarPeliculas() {
             if (resultado == true) {
                 console.log("Se guardo la pelicula correctamente");
                 alert("Se guardo la pelicula correctamente");
-                //$("#modal").modal("hide");
-                //BuscarPeliculas();
-                //Location.href = "../../Rentals/Create"
+                $("#staticBackdrop").modal("hide");
+                SearchMovieTmp();
+                Location.href = "../../Rental/Create"
             } else {
                 alert("No se pudo agregar la pelicula, intente nuevamente");
                 console.log("No se pudo agregar la pelicula, intente nuevamente");
@@ -85,7 +85,7 @@ function CancelRental() {
         success: function(result){
             if(resultado = true)
             {
-                location.href = "../../Rentals/Index";
+                location.href = "../../Rental/Index";
             }
         },
         error(result){
@@ -100,10 +100,11 @@ function SearchMovieTmp () {
         url: "../../Rental/SearchMovieTmp",
         data: {},
         success: function(ListadoMovieTmp){
+            console.log(ListadoMovieTmp)
             $.each(ListadoMovieTmp, function(index, item){
                 $("#tbody-peliculas").append(
                     `<tr>
-                        <th>${ item.movieName }</th>
+                        <th>${item.movieName}</th>
                         <th></th>
                     </tr>`
                 );
