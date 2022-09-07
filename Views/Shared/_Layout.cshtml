@@ -12,6 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Kaushan+Script&family=Pacifico&display=swap" rel="stylesheet">
 
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </head>
 <body>
     <header>
@@ -85,9 +89,6 @@
         const darkmode = new Darkmode(options);
         darkmode.showWidget();
     </script> *@
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/rentalMovie.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

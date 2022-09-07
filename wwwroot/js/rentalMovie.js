@@ -3,7 +3,8 @@ function CargarPaginas() {
 }
 
 function AgregarPeliculas() {
-    console.log("Funcion de agregar pelicula temporal activada")
+    // console.log("Funcion de agregar pelicula temporal activada")
+    
     var movieID = $("#MovieID").val();
 
     $.ajax({
@@ -45,7 +46,7 @@ function CancelRental() {
     })
 }
 
-function SearchMovieTmp () {
+function SearchMovieTmp() {
     $.ajax({
         type: "GET",
         url: "../../Rental/SearchMovieTmp",
@@ -81,6 +82,27 @@ function QuitarMovie(id){
         },
         error(result){
             
+        }
+    })
+}
+
+function SearchMovie() {
+    $.ajax({
+        type: "GET",
+        url: "../../Rental/SearchMovie",
+        data: {RentalID: rentalID},
+        success: function(ListadoMovie){
+            // console.log(ListadoMovie)
+            $.each(ListadoMovie, function(index, item){
+                $("#tbody-peliculas").append(
+                    `<tr>
+                        <th>${item.movieName}</th>
+                    </tr>`
+                );
+            });
+        },
+        error(result){
+
         }
     })
 }
