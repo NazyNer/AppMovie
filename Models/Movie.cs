@@ -18,6 +18,8 @@ namespace AppMovie.Models
         [Display(Name = "Descripcion de la Película")]
         public string? MovieDescription { get; set; }
 
+        public bool IsDeleted { get; set; }
+
 
         [Display(Name = "Fecha de lanzamineto")]
         [DataType(DataType.Date)]
