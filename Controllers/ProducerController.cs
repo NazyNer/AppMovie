@@ -140,17 +140,16 @@ namespace AppMovie.Controllers
         // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Producer == null)
-            {
-                return Problem("Entity set 'AppMovieContext.Producer'  is null.");
-            }
             var producer = await _context.Producer.FindAsync(id);
             if (producer != null)
             {
+                 var producerInMovie = (from a in  _context.Movie where a.ProducerID == id select a).ToList();
+                if (producerInMovie.Count == 0)
+                {
                 _context.Producer.Remove(producer);
                 await _context.SaveChangesAsync();
+                }
             }
-            
             
             return RedirectToAction(nameof(Index));
         }
