@@ -140,15 +140,16 @@ namespace AppMovie.Controllers
         // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-        if (_context.Section == null)
-            {
-                return Problem("Entity set 'AppMovieContext.Section'  is null.");
-            }
             var section = await _context.Section.FindAsync(id);
+
             if (section != null)
             {
+                var sectionInMovie = (from a in  _context.Movie where a.SectionID == id select a).ToList();
+                if (sectionInMovie.Count == 0)
+                {
                 _context.Section.Remove(section);
                 await _context.SaveChangesAsync();
+                }
             }
             
             

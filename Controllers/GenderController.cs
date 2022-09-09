@@ -140,15 +140,16 @@ namespace AppMovie.Controllers
         // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Gender == null)
-            {
-                return Problem("Entity set 'AppMovieContext.Gender'  is null.");
-            }
             var gender = await _context.Gender.FindAsync(id);
             if (gender != null)
             {
+                var genderInMovie = (from a in  _context.Movie where a.GenderID == id select a).ToList();
+                if (genderInMovie.Count == 0)
+                {
                 _context.Gender.Remove(gender);
                 await _context.SaveChangesAsync();
+                }
+
             }
             
             return RedirectToAction(nameof(Index));
