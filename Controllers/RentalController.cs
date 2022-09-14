@@ -212,7 +212,6 @@ namespace AppMovie.Controllers
 
                     _context.RentalDetailTemp.RemoveRange(rentalTemp);
                     _context.SaveChanges();
-
                     transaccion.Commit();
 
                 }
@@ -222,7 +221,7 @@ namespace AppMovie.Controllers
                     resultado = false;
                 }
             }
-            ViewData["MovieID"] = new SelectList(_context.Movie.Where(x => x.estaAlquilada == false), "MovieID", "MovieName");
+            // ViewData["MovieID"] = new SelectList(_context.Movie.Where(x => x.estaAlquilada == false), "MovieID", "MovieName");
             return Json(resultado);
         }
 

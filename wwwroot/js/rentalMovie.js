@@ -34,7 +34,7 @@ function CancelRental() {
         type: "POST",
         url: "../../Rental/CancelarAlquiler",
         data: {},
-        success: function(result){
+        success: function(resultado){
             if(resultado = true)
             {
                 location.href = "../../Rental/Index";
@@ -86,9 +86,10 @@ function QuitarMovie(id){
     })
 }
 
-function SearchMovie() {
+function SearchMovie(rentalID) {
+    $('#tbody-peliculas').empty();
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: "../../Rental/SearchMovie",
         data: {RentalID: rentalID},
         success: function(ListadoMovie){
