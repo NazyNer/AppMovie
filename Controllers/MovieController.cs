@@ -132,40 +132,47 @@ namespace AppMovie.Controllers
         }
 
         // GET: Movie/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Movie == null)
-            {
-                return NotFound();
-            }
+        // public async Task<IActionResult> Delete(int? id)
+        // {
+        //     if (id == null || _context.Movie == null)
+        //     {
+        //         return NotFound();
+        //     }
 
-            var movie = await _context.Movie
-                .Include(m => m.Gender)
-                .Include(m => m.Producer)
-                .Include(m => m.Section)
-                .FirstOrDefaultAsync(m => m.MovieID == id);
-            if (movie == null)
-            {
-                return NotFound();
-            }
+        //     var movie = await _context.Movie
+        //         .Include(m => m.Gender)
+        //         .Include(m => m.Producer)
+        //         .Include(m => m.Section)
+        //         .FirstOrDefaultAsync(m => m.MovieID == id);
+        //     if (movie == null)
+        //     {
+        //         return NotFound();
+        //     }
 
-            return View(movie);
-        }
+        //     return View(movie);
+        // }
 
         // POST: Movie/Delete/5
         // [HttpPost, ActionName("Delete")]
         // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Movie == null)
-            {
-                return Problem("Entity set 'AppMovieContext.Movie'  is null.");
-            }
             var movie = await _context.Movie.FindAsync(id);
             if (movie != null)
             {
-                _context.Movie.Remove(movie);
-                await _context.SaveChangesAsync();
+                var movieAlquilada = (from a in _context.RentalDetail where a.MovieID == id select a).Count();
+                if(movieAlquilada == 0)
+                {
+                    _context.Movie.Remove(movie);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    movie.IsDeleted = true;
+                    movie.MovieName = "Eliminada";
+                    _context.Update(movie);
+                    await _context.SaveChangesAsync();
+                }
             }
 
             return RedirectToAction(nameof(Index));
