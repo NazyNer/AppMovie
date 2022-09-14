@@ -38,7 +38,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Producer)
             </th>
-            <th></th>
+            <th>
+                Alquilada
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -61,6 +63,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Producer.ProducerName)
+            </td>
+            <td>
+                @(item.estaAlquilada?"si":"no")
             </td>
             <td>
                 <a class="botonEditar margin" asp-action="Edit" asp-route-id="@item.MovieID">Editar</a>
