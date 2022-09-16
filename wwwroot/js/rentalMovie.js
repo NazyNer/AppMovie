@@ -87,7 +87,7 @@ function QuitarMovie(id){
 }
 
 function SearchMovie(rentalID) {
-    $('#tbody-peliculas').empty();
+    $('#tbody-peliculasDetail').empty();
     $.ajax({
         type: "POST",
         url: "../../Rental/SearchMovie",
@@ -95,7 +95,7 @@ function SearchMovie(rentalID) {
         success: function(ListadoMovie){
             // console.log(ListadoMovie)
             $.each(ListadoMovie, function(index, item){
-                $("#tbody-peliculas").append(
+                $("#tbody-peliculasDetail").append(
                     `<tr>
                         <th>${item.movieName}</th>
                     </tr>`

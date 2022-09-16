@@ -15,8 +15,8 @@
 </head>
 <body>
 
-<div>
-    <h4>Rental</h4>
+<div class="HomeV2">
+    <h4 class="sombraTexto sizeText">Rental</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -38,12 +38,12 @@
                     <th>Titulo de la pelicula</th>
                 </tr>
         </thead>
-        <tbody id="tbody-peliculas"></tbody>    
+        <tbody id="tbody-peliculasDetail"></tbody>    
     </table>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.RentalID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit botonCrear" asp-route-id="@Model?.RentalID">Edit</a> |
+    <a class="botonVolver" asp-action="Index">Back to List</a>
 </div>
 
 
