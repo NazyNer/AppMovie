@@ -326,7 +326,7 @@ namespace AppMovie.Controllers
         
         private bool RentalExists(int id)
         {
-          return (_context.Rental?.Any(e => e.RentalID == id)).GetValueOrDefault();
+            return (_context.Rental?.Any(e => e.RentalID == id)).GetValueOrDefault();
         }
     }
 }

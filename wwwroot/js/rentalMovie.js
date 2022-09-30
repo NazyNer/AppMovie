@@ -52,13 +52,13 @@ function SearchMovieTmp() {
         url: "../../Rental/SearchMovieTmp",
         data: {},
         success: function(ListadoMovieTmp){
-            console.log(ListadoMovieTmp)
+            // console.log(ListadoMovieTmp)
             $.each(ListadoMovieTmp, function(index, item){
                 $("#tbody-peliculas").append(
                     `<tr>
                         <th>${item.movieName}</th>
                         <th>
-                            <button class="btn botonEliminar" onclick="QuitarMovie"("${item.movieID}");>Quitar Peliculas</button>
+                            <button class="btn botonEliminar" onclick="QuitarMovie(${item.movieID});">Quitar Peliculas</button>
                         </th>
                     </tr>`
                 );
