@@ -1,21 +1,21 @@
-function CargarPaginas() {
-    SearchMovieTmp();
+function CargarPaginasDevolucion() {
+    SearchReturnTmp();
 }
 
-function AgregarPeliculas() {
+function AgregarPeliculasDevolucion() {
     // console.log("Funcion de agregar pelicula temporal activada")
     var movieID = $("#MovieID").val();
     $.ajax({
         type: "POST",
-        url: "../../Rental/AgregarPeliculas",
+        url: "../../Return/AgregarPeliculas",
         data: { MovieID: movieID },
         success: function (resultado) {
             if (resultado == true) {
                 console.log("Se guardo la pelicula correctamente");
                 alert("Se guardo la pelicula correctamente");
                 $("#staticBackdrop").modal("hide");
-                SearchMovieTmp();
-                Location.href = "../../Rental/Create"
+                SearchReturnTmp();
+                Location.href = "../../Return/Create"
             } else {
                 alert("No se pudo agregar la pelicula, intente nuevamente");
                 console.log("No se pudo agregar la pelicula, intente nuevamente");
@@ -27,15 +27,15 @@ function AgregarPeliculas() {
     });
 }
 
-function CancelRental() {
+function CancelReturn() {
     $.ajax({
         type: "POST",
-        url: "../../Rental/CancelarAlquiler",
+        url: "../../Return/CancelarDevolucion",
         data: {},
         success: function(resultado){
             if(resultado = true)
             {
-                location.href = "../../Rental/Index";
+                location.href = "../../Return/Index";
             }
         },
         error(result){
@@ -44,10 +44,10 @@ function CancelRental() {
     })
 }
 
-function SearchMovieTmp() {
+function SearchReturnTmp() {
     $.ajax({
         type: "GET",
-        url: "../../Rental/SearchMovieTmp",
+        url: "../../Return/SearchMovieTmp",
         data: {},
         success: function(ListadoMovieTmp){
             // console.log(ListadoMovieTmp)
@@ -56,7 +56,7 @@ function SearchMovieTmp() {
                     `<tr>
                         <th>${item.movieName}</th>
                         <th>
-                            <button class="btn botonEliminar" onclick="QuitarMovie(${item.movieID});">Quitar Peliculas</button>
+                            <button class="btn botonEliminar" onclick="QuitarMovieReturn(${item.movieID});">Quitar Peliculas</button>
                         </th>
                     </tr>`
                 );
@@ -68,14 +68,14 @@ function SearchMovieTmp() {
     })
 }
 
-function QuitarMovie(id){
+function QuitarMovieReturn(id){
     $.ajax({
         type: "POST",
-        url: "../../Rental/QuitarMovie",
+        url: "../../Return/QuitarMovie",
         data: {MovieID: id},
         success: function(resultado){
             if(resultado == true){
-                location.href = "../../Rental/Create";
+                location.href = "../../Return/Create";
             }
         },
         error(result){
@@ -84,16 +84,16 @@ function QuitarMovie(id){
     })
 }
 
-function SearchMovie(rentalID) {
-    $('#tbody-peliculasDetail').empty();
+function SearchMovieReturn(rentalID) {
+    $('#tbody-peliculasReturn').empty();
     $.ajax({
         type: "POST",
-        url: "../../Rental/SearchMovie",
+        url: "../../Return/SearchMovie",
         data: {RentalID: rentalID},
         success: function(ListadoMovie){
             // console.log(ListadoMovie)
             $.each(ListadoMovie, function(index, item){
-                $("#tbody-peliculasDetail").append(
+                $("#tbody-peliculasReturn").append(
                     `<tr>
                         <th>${item.movieName}</th>
                     </tr>`

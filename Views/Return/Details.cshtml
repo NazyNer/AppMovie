@@ -1,8 +1,7 @@
-@model AppMovie.Models.Rental
+@model AppMovie.Models.Return
+
 @{
-    ViewData["Title"] = "Alquileres";
-}
-@{
+    ViewData["Title"] = "Devoluciones";
     Layout = "_Layout";
 }
 
@@ -15,15 +14,15 @@
 </head>
 <body>
 
-<div class="HomeV2">
-    <h4 class="sombraTexto sizeText">Rental</h4>
+<div>
+    <h4>Return</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RentalDate)
+            @Html.DisplayNameFor(model => model.ReturnDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RentalDate)
+            @Html.DisplayFor(model => model.ReturnDate)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Partner)
@@ -32,22 +31,21 @@
             @Html.DisplayFor(model => model.Partner.PartnerName)
         </dd>
     </dl>
-    <table class="table marginTable">
+        <table class="table marginTable">
         <thead>
                 <tr>
                     <th>Titulo de la pelicula</th>
                 </tr>
         </thead>
-        <tbody id="tbody-peliculasDetail"></tbody>    
+        <tbody id="tbody-peliculasReturn"></tbody>    
     </table>
-    <div>
     <a class="botonVolver" asp-action="Index">Volver a la lista</a>
+    <div>
 </div>
-
 
 @section Scripts{
     <script>
-        window.onload = SearchMovie(@Model?.RentalID);
+        window.onload = SearchMovieReturn(@Model?.ReturnID);
     </script>
 }
 </body>

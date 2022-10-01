@@ -2,14 +2,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AppMovie.Models
 {
-    public class Rental
-    {
+  public class Return{
         [Key]
-        public int RentalID { get; set; }
+        public int ReturnID { get; set; }
 
-        [Display(Name = "Fecha de Alquiler")]
+        [Display(Name = "Fecha de devolucion")]
         [DataType(DataType.Date)]
-        public DateTime RentalDate { get; set; }
+        public DateTime ReturnDate { get; set; }
 
         [Display(Name = "Socio")]
         public int PartnerID { get; set; }
@@ -19,6 +18,6 @@ namespace AppMovie.Models
 
 
 
-        public virtual ICollection<RentalDetail>? RentalDetails { get; set; }
-    }
+        public virtual ICollection<RentalDetail>? ReturnDetails { get; set; }
+  }
 }

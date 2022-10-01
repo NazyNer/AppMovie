@@ -1,9 +1,9 @@
-@model IEnumerable<AppMovie.Models.Rental>
+@model IEnumerable<AppMovie.Models.Return>
+
 @{
-    ViewData["Title"] = "Alquileres";
+    ViewData["Title"] = "Devoluciones";
     Layout = "_Layout";
 }
-
 
 <!DOCTYPE html>
 
@@ -20,7 +20,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.RentalDate)
+                @Html.DisplayNameFor(model => model.ReturnDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Partner)
@@ -32,13 +32,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.RentalDate)
+                @Html.DisplayFor(modelItem => item.ReturnDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Partner.PartnerName)
             </td>
             <td>
-                <a class="btn btn-danger" asp-action="Details" asp-route-id="@item.RentalID">Detalle</a>
+                <a class="btn btn-danger" asp-action="Details" asp-route-id="@item.ReturnID">Detalles</a>
             </td>
         </tr>
 }
