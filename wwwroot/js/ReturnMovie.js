@@ -52,7 +52,7 @@ function SearchReturnTmp() {
         success: function(ListadoMovieTmp){
             // console.log(ListadoMovieTmp)
             $.each(ListadoMovieTmp, function(index, item){
-                $("#tbody-peliculas").append(
+                $("#tbody-Devolucion").append(
                     `<tr>
                         <th>${item.movieName}</th>
                         <th>
@@ -84,12 +84,12 @@ function QuitarMovieReturn(id){
     })
 }
 
-function SearchMovieReturn(rentalID) {
+function SearchMovieReturn(ReturnID) {
     $('#tbody-peliculasReturn').empty();
     $.ajax({
         type: "POST",
         url: "../../Return/SearchMovie",
-        data: {RentalID: rentalID},
+        data: {ReturnID: ReturnID},
         success: function(ListadoMovie){
             // console.log(ListadoMovie)
             $.each(ListadoMovie, function(index, item){
