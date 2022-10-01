@@ -18,6 +18,6 @@ namespace AppMovie.Models
 
 
 
-        public virtual ICollection<RentalDetail>? ReturnDetails { get; set; }
+        public virtual ICollection<ReturnDetail>? ReturnDetails { get; set; }
   }
 }
