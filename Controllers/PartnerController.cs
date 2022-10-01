@@ -145,23 +145,22 @@ namespace AppMovie.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Partner == null)
-            {
-                return Problem("Entity set 'AppMovieContext.Partner'  is null.");
-            }
             var partner = await _context.Partner.FindAsync(id);
             if (partner != null)
             {
-                _context.Partner.Remove(partner);
+                var PartnerInRental = (from a in _context.Rental where a.PartnerID == id select a).ToList();
+                if(PartnerInRental.Count == 0)
+                {
+                    _context.Partner.Remove(partner);
+                    await _context.SaveChangesAsync();
+                }
             }
-            
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PartnerExists(int id)
         {
-          return (_context.Partner?.Any(e => e.PartnerID == id)).GetValueOrDefault();
+            return (_context.Partner?.Any(e => e.PartnerID == id)).GetValueOrDefault();
         }
     }
 }

@@ -21,9 +21,9 @@ namespace AppMovie.Controllers
         // GET: Country
         public async Task<IActionResult> Index()
         {
-              return _context.Country != null ? 
-                          View(await _context.Country.ToListAsync()) :
-                          Problem("Entity set 'AppMovieContext.Country'  is null.");
+            return _context.Country != null ? 
+                        View(await _context.Country.ToListAsync()) :
+                        Problem("Entity set 'AppMovieContext.Country'  is null.");
         }
 
         // GET: Country/Details/5
@@ -140,15 +140,15 @@ namespace AppMovie.Controllers
         // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Country == null)
+            var Country = await _context.Country.FindAsync(id);
+            if (Country != null)
             {
-                return Problem("Entity set 'AppMovieContext.Country'  is null.");
-            }
-            var country = await _context.Country.FindAsync(id);
-            if (country != null)
-            {
-                _context.Country.Remove(country);
-                await _context.SaveChangesAsync();
+                var CountryInLocation = (from a in _context.Location where a.CountryID == id select a).ToList();
+                if (CountryInLocation.Count == 0)
+                {
+                    _context.Country.Remove(Country);
+                    await _context.SaveChangesAsync();
+                }
             }
             
             return RedirectToAction(nameof(Index));
@@ -156,7 +156,7 @@ namespace AppMovie.Controllers
 
         private bool CountryExists(int id)
         {
-          return (_context.Country?.Any(e => e.CountryId == id)).GetValueOrDefault();
+            return (_context.Country?.Any(e => e.CountryId == id)).GetValueOrDefault();
         }
     }
 }

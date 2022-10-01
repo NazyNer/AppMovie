@@ -21,9 +21,9 @@ namespace AppMovie.Controllers
         // GET: Section
         public async Task<IActionResult> Index()
         {
-              return _context.Section != null ? 
-                          View(await _context.Section.ToListAsync()) :
-                          Problem("Entity set 'AppMovieContext.Section'  is null.");
+            return _context.Section != null ? 
+                        View(await _context.Section.ToListAsync()) :
+                        Problem("Entity set 'AppMovieContext.Section'  is null.");
         }
 
         // GET: Section/Details/5
@@ -158,7 +158,7 @@ namespace AppMovie.Controllers
 
         private bool SectionExists(int id)
         {
-           return _context.Section.Any(e => e.SectionId == id);
+            return _context.Section.Any(e => e.SectionId == id);
         }
     }
 }

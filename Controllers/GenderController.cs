@@ -21,9 +21,9 @@ namespace AppMovie.Controllers
         // GET: Gender
         public async Task<IActionResult> Index()
         {
-              return _context.Gender != null ? 
-                          View(await _context.Gender.ToListAsync()) :
-                          Problem("Entity set 'AppMovieContext.Gender'  is null.");
+            return _context.Gender != null ? 
+                        View(await _context.Gender.ToListAsync()) :
+                        Problem("Entity set 'AppMovieContext.Gender'  is null.");
         }
 
         // GET: Gender/Details/5
@@ -157,7 +157,7 @@ namespace AppMovie.Controllers
 
         private bool GenderExists(int id)
         {
-          return (_context.Gender?.Any(e => e.GenderId == id)).GetValueOrDefault();
+            return (_context.Gender?.Any(e => e.GenderId == id)).GetValueOrDefault();
         }
     }
 }

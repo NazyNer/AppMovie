@@ -21,9 +21,9 @@ namespace AppMovie.Controllers
         // GET: Producer
         public async Task<IActionResult> Index()
         {
-              return _context.Producer != null ? 
-                          View(await _context.Producer.ToListAsync()) :
-                          Problem("Entity set 'AppMovieContext.Producer'  is null.");
+            return _context.Producer != null ? 
+                        View(await _context.Producer.ToListAsync()) :
+                        Problem("Entity set 'AppMovieContext.Producer'  is null.");
         }
 
         // GET: Producer/Details/5
@@ -143,7 +143,7 @@ namespace AppMovie.Controllers
             var producer = await _context.Producer.FindAsync(id);
             if (producer != null)
             {
-                 var producerInMovie = (from a in  _context.Movie where a.ProducerID == id select a).ToList();
+                var producerInMovie = (from a in  _context.Movie where a.ProducerID == id select a).ToList();
                 if (producerInMovie.Count == 0)
                 {
                 _context.Producer.Remove(producer);
@@ -156,7 +156,7 @@ namespace AppMovie.Controllers
 
         private bool ProducerExists(int id)
         {
-          return (_context.Producer?.Any(e => e.ProducerId == id)).GetValueOrDefault();
+            return (_context.Producer?.Any(e => e.ProducerId == id)).GetValueOrDefault();
         }
     }
 }

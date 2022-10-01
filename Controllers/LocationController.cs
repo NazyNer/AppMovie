@@ -145,15 +145,15 @@ namespace AppMovie.Controllers
         // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Location == null)
-            {
-                return Problem("Entity set 'AppMovieContext.Location'  is null.");
-            }
             var location = await _context.Location.FindAsync(id);
             if (location != null)
             {
-                _context.Location.Remove(location);
-                await _context.SaveChangesAsync();
+                var LocationInPartner = (from a in _context.Partner where a.LocationID == id select a).ToList();
+                if(LocationInPartner.Count == 0)
+                {
+                    _context.Location.Remove(location);
+                    await _context.SaveChangesAsync();
+                }
             }
             
             return RedirectToAction(nameof(Index));
@@ -161,7 +161,7 @@ namespace AppMovie.Controllers
 
         private bool LocationExists(int id)
         {
-          return (_context.Location?.Any(e => e.LocationId == id)).GetValueOrDefault();
+            return (_context.Location?.Any(e => e.LocationId == id)).GetValueOrDefault();
         }
     }
 }
