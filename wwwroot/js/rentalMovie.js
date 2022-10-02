@@ -11,14 +11,20 @@ function AgregarPeliculas() {
         data: { MovieID: movieID },
         success: function (resultado) {
             if (resultado == true) {
-                console.log("Se guardo la pelicula correctamente");
-                alert("Se guardo la pelicula correctamente");
+                Swal.fire(
+                    'Perfecto!',
+                    'Se guardo la pelicula correctamente!',
+                    'success'
+                )
                 $("#staticBackdrop").modal("hide");
                 SearchMovieTmp();
                 Location.href = "../../Rental/Create"
             } else {
-                alert("No se pudo agregar la pelicula, intente nuevamente");
-                console.log("No se pudo agregar la pelicula, intente nuevamente");
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Oops...',
+                    text: 'No se pudo agregar la pelicula, intente nuevamente!'
+                })
             }
         },
         error: function(_result) {
@@ -35,10 +41,18 @@ function CancelRental() {
         success: function(resultado){
             if(resultado = true)
             {
+            Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Alquiler cancelado',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+            setTimeout(function(){
                 location.href = "../../Rental/Index";
-            }
-        },
-        error(result){
+            }, 1010);
+        }
+        error(result);
 
         }
     })
