@@ -203,7 +203,6 @@ namespace AppMovie.Controllers
                     var movie = (from a in _context.Movie where a.MovieID == MovieID select a).SingleOrDefault();
                     movie.estaAlquilada = true;
                     _context.SaveChanges();
-
                     var movieTemp = new RentalDetailTemp
                     {
                         MovieID = movie.MovieID,

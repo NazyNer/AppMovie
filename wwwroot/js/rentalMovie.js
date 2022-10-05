@@ -16,8 +16,8 @@ function AgregarPeliculas() {
                     'Se guardo la pelicula correctamente!',
                     'success'
                 )
-                $("#staticBackdrop").modal("hide");
                 SearchMovieTmp();
+                $("#staticBackdrop").modal("hide");
                 Location.href = "../../Rental/Create"
             } else {
                 Swal.fire({
@@ -83,19 +83,48 @@ function SearchMovieTmp() {
 }
 
 function QuitarMovie(id){
-    $.ajax({
-        type: "POST",
-        url: "../../Rental/QuitarMovie",
-        data: {MovieID: id},
-        success: function(resultado){
-            if(resultado == true){
-                location.href = "../../Rental/Create";
-            }
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
         },
-        error(result){
-            
-        }
+        buttonsStyling: false
     })
+    
+    swalWithBootstrapButtons.fire({
+        title: 'Estas segur@?',
+        text: "Desea eliminar la pelicula del alquiler!",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Si, Eliminar!',
+        cancelButtonText: 'No, cancelar!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "POST",
+                url: "../../Rental/QuitarMovie",
+                data: {MovieID: id},
+                success: function(resultado){
+                    if(resultado == true){
+                        location.href = "../../Rental/Create";
+                        console.log("entre en el ajax");
+                    }
+                }}),
+            swalWithBootstrapButtons.fire(
+            'Eliminado!',
+            'La pelicula se elimino de la lista',
+            'success'
+            )}
+        else{
+          /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel,
+        swalWithBootstrapButtons.fire(
+            'Cancelado',
+            'Dejaste la pelicula en la lista',
+            'error'
+        )
+        }})
 }
 
 function SearchMovie(rentalID) {
