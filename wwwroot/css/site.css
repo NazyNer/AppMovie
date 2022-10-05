@@ -15,10 +15,20 @@ html {
 :root {
   --ImagenFondo: url(../css/img/logo.png);
 }
+
 body {
   margin-bottom: 60px;
-  background-image: var(--ImagenFondo);
-  background-color: lightslategray;
+  background-color: rgb(73, 79, 85);
+}
+
+body svg {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+}
+body svg.svg2 {
+  top: 60px;
+  transform: rotateZ(180deg);
 }
 .carousel-item{
   height: 20em;
@@ -69,11 +79,6 @@ body {
   font-weight: bold;
 }
 
-/* GIRA HORIZONTAL
-.flip-container:hover .card {
-  transform: rotateY(180deg);
-} */
-
 /* GIRA VERTICAL  */
 .flip-container:hover .card {
   transform: rotateX(180deg);
@@ -92,7 +97,6 @@ body {
 }
 
 .frente {
-  /* background-color: #dd5599; */
   color: black;
   display: flex;
   text-shadow: 4px 4px 4px #5f127c;
@@ -294,9 +298,12 @@ th, td{
 .Home{
   background-color: rgba(255, 255, 255, 0.283);
   border-radius: 50px;
+  background-image: var(--ImagenFondo);
   backdrop-filter: blur(4px);
   padding-bottom: 35px;
   padding-top: 5px;
+  box-shadow: -1px -1px 15px rgba(255, 255, 255, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3), 2px 2px 15px rgba(0, 0, 0, 0.5);
+
 }
 .HomeV2{
   background-color: rgba(255, 255, 255, 0.571);

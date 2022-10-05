@@ -1,8 +1,6 @@
 @model AppMovie.Models.Rental
 @{
     ViewData["Title"] = "Alquileres";
-}
-@{
     Layout = "_Layout";
 }
 
@@ -19,7 +17,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Elegir pelicula</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -61,7 +59,7 @@
                         <th>Titulo de la pelicula</th>
                           <th>
                             <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                              <span class="button-content">pelicula</span>
+                              <span class="button-content">Pelicula</span>
                             </button> 
                           </th>
                       </tr>
@@ -73,6 +71,7 @@
         </div>
     </div>
 </div>
+
 @section Scripts{
   <script>
       window.onload = CargarPaginas();

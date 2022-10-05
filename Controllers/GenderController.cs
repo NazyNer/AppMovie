@@ -21,9 +21,9 @@ namespace AppMovie.Controllers
         // GET: Gender
         public async Task<IActionResult> Index()
         {
-              return _context.Gender != null ? 
-                          View(await _context.Gender.ToListAsync()) :
-                          Problem("Entity set 'AppMovieContext.Gender'  is null.");
+            return _context.Gender != null ? 
+                        View(await _context.Gender.ToListAsync()) :
+                        Problem("Entity set 'AppMovieContext.Gender'  is null.");
         }
 
         // GET: Gender/Details/5
@@ -140,15 +140,16 @@ namespace AppMovie.Controllers
         // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Gender == null)
-            {
-                return Problem("Entity set 'AppMovieContext.Gender'  is null.");
-            }
             var gender = await _context.Gender.FindAsync(id);
             if (gender != null)
             {
+                var genderInMovie = (from a in  _context.Movie where a.GenderID == id select a).ToList();
+                if (genderInMovie.Count == 0)
+                {
                 _context.Gender.Remove(gender);
                 await _context.SaveChangesAsync();
+                }
+
             }
             
             return RedirectToAction(nameof(Index));
@@ -156,7 +157,7 @@ namespace AppMovie.Controllers
 
         private bool GenderExists(int id)
         {
-          return (_context.Gender?.Any(e => e.GenderId == id)).GetValueOrDefault();
+            return (_context.Gender?.Any(e => e.GenderId == id)).GetValueOrDefault();
         }
     }
 }

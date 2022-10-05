@@ -4,23 +4,27 @@ function CargarPaginas() {
 
 function AgregarPeliculas() {
     // console.log("Funcion de agregar pelicula temporal activada")
-    
     var movieID = $("#MovieID").val();
-
     $.ajax({
         type: "POST",
         url: "../../Rental/AgregarPeliculas",
         data: { MovieID: movieID },
         success: function (resultado) {
             if (resultado == true) {
-                console.log("Se guardo la pelicula correctamente");
-                alert("Se guardo la pelicula correctamente");
-                $("#staticBackdrop").modal("hide");
+                Swal.fire(
+                    'Perfecto!',
+                    'Se guardo la pelicula correctamente!',
+                    'success'
+                )
                 SearchMovieTmp();
+                $("#staticBackdrop").modal("hide");
                 Location.href = "../../Rental/Create"
             } else {
-                alert("No se pudo agregar la pelicula, intente nuevamente");
-                console.log("No se pudo agregar la pelicula, intente nuevamente");
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Oops...',
+                    text: 'No se pudo agregar la pelicula, intente nuevamente!'
+                })
             }
         },
         error: function(_result) {
@@ -34,13 +38,21 @@ function CancelRental() {
         type: "POST",
         url: "../../Rental/CancelarAlquiler",
         data: {},
-        success: function(result){
+        success: function(resultado){
             if(resultado = true)
             {
+            Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Alquiler cancelado',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+            setTimeout(function(){
                 location.href = "../../Rental/Index";
-            }
-        },
-        error(result){
+            }, 1010);
+        }
+        error(result);
 
         }
     })
@@ -52,13 +64,13 @@ function SearchMovieTmp() {
         url: "../../Rental/SearchMovieTmp",
         data: {},
         success: function(ListadoMovieTmp){
-            console.log(ListadoMovieTmp)
+            // console.log(ListadoMovieTmp)
             $.each(ListadoMovieTmp, function(index, item){
                 $("#tbody-peliculas").append(
                     `<tr>
                         <th>${item.movieName}</th>
                         <th>
-                            <button class="btn botonEliminar" onclick="QuitarMovie"("${item.movieID}");>Quitar Peliculas</button>
+                            <button class="btn botonEliminar" onclick="QuitarMovie(${item.movieID});">Quitar Peliculas</button>
                         </th>
                     </tr>`
                 );
@@ -71,30 +83,60 @@ function SearchMovieTmp() {
 }
 
 function QuitarMovie(id){
-    $.ajax({
-        type: "POST",
-        url: "../../Rental/QuitarMovie",
-        data: {MovieID: id},
-        success: function(resultado){
-            if(resultado == true){
-                location.href = "../../Rental/Create";
-            }
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
         },
-        error(result){
-            
-        }
+        buttonsStyling: false
     })
+    
+    swalWithBootstrapButtons.fire({
+        title: 'Estas segur@?',
+        text: "Desea eliminar la pelicula del alquiler!",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Si, Eliminar!',
+        cancelButtonText: 'No, cancelar!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "POST",
+                url: "../../Rental/QuitarMovie",
+                data: {MovieID: id},
+                success: function(resultado){
+                    if(resultado == true){
+                        location.href = "../../Rental/Create";
+                        console.log("entre en el ajax");
+                    }
+                }}),
+            swalWithBootstrapButtons.fire(
+            'Eliminado!',
+            'La pelicula se elimino de la lista',
+            'success'
+            )}
+        else{
+          /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel,
+        swalWithBootstrapButtons.fire(
+            'Cancelado',
+            'Dejaste la pelicula en la lista',
+            'error'
+        )
+        }})
 }
 
-function SearchMovie() {
+function SearchMovie(rentalID) {
+    $('#tbody-peliculasDetail').empty();
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: "../../Rental/SearchMovie",
         data: {RentalID: rentalID},
         success: function(ListadoMovie){
             // console.log(ListadoMovie)
             $.each(ListadoMovie, function(index, item){
-                $("#tbody-peliculas").append(
+                $("#tbody-peliculasDetail").append(
                     `<tr>
                         <th>${item.movieName}</th>
                     </tr>`

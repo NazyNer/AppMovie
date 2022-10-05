@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppMovie.Migrations
 {
     [DbContext(typeof(AppMovieContext))]
-    partial class AppMovieContextModelSnapshot : ModelSnapshot
+    [Migration("20221001122735_ReturnMovie")]
+    partial class ReturnMovie
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -210,11 +212,16 @@ namespace AppMovie.Migrations
                     b.Property<int>("RentalID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ReturnID")
+                        .HasColumnType("int");
+
                     b.HasKey("RentalDetailID");
 
                     b.HasIndex("MovieID");
 
                     b.HasIndex("RentalID");
+
+                    b.HasIndex("ReturnID");
 
                     b.ToTable("RentalDetail");
                 });
@@ -285,8 +292,6 @@ namespace AppMovie.Migrations
                     b.HasIndex("MovieID");
 
                     b.HasIndex("RentalID");
-
-                    b.HasIndex("ReturnID");
 
                     b.ToTable("ReturnDetail");
                 });
@@ -401,6 +406,10 @@ namespace AppMovie.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("AppMovie.Models.Return", null)
+                        .WithMany("ReturnDetails")
+                        .HasForeignKey("ReturnID");
+
                     b.Navigation("Movie");
 
                     b.Navigation("Rental");
@@ -428,12 +437,6 @@ namespace AppMovie.Migrations
                     b.HasOne("AppMovie.Models.Rental", "Rental")
                         .WithMany()
                         .HasForeignKey("RentalID");
-
-                    b.HasOne("AppMovie.Models.Return", null)
-                        .WithMany("ReturnDetails")
-                        .HasForeignKey("ReturnID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("Movie");
 

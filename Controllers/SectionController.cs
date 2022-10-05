@@ -21,9 +21,9 @@ namespace AppMovie.Controllers
         // GET: Section
         public async Task<IActionResult> Index()
         {
-              return _context.Section != null ? 
-                          View(await _context.Section.ToListAsync()) :
-                          Problem("Entity set 'AppMovieContext.Section'  is null.");
+            return _context.Section != null ? 
+                        View(await _context.Section.ToListAsync()) :
+                        Problem("Entity set 'AppMovieContext.Section'  is null.");
         }
 
         // GET: Section/Details/5
@@ -140,15 +140,16 @@ namespace AppMovie.Controllers
         // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-        if (_context.Section == null)
-            {
-                return Problem("Entity set 'AppMovieContext.Section'  is null.");
-            }
             var section = await _context.Section.FindAsync(id);
+
             if (section != null)
             {
+                var sectionInMovie = (from a in  _context.Movie where a.SectionID == id select a).ToList();
+                if (sectionInMovie.Count == 0)
+                {
                 _context.Section.Remove(section);
                 await _context.SaveChangesAsync();
+                }
             }
             
             
@@ -157,7 +158,7 @@ namespace AppMovie.Controllers
 
         private bool SectionExists(int id)
         {
-           return _context.Section.Any(e => e.SectionId == id);
+            return _context.Section.Any(e => e.SectionId == id);
         }
     }
 }

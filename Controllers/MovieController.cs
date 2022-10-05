@@ -180,7 +180,7 @@ namespace AppMovie.Controllers
 
         private bool MovieExists(int id)
         {
-          return (_context.Movie?.Any(e => e.MovieID == id)).GetValueOrDefault();
+            return (_context.Movie?.Any(e => e.MovieID == id)).GetValueOrDefault();
         }
     }
 }
