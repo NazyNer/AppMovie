@@ -12,7 +12,7 @@ function AgregarPeliculasDevolucion() {
         success: function (resultado) {
             if (resultado == true) {
                 $("#staticBackdrop").modal("hide");
-                SearchMovieTmp();
+                SearchReturnTmp();
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
@@ -21,7 +21,7 @@ function AgregarPeliculasDevolucion() {
                     timer: 1000
                 })
                 setTimeout(function(){
-                    Location.href = "../../Return/Create"
+                    location.href = "../../Return/Create";
                 }, 1010);
             } else {
                 Swal.fire({
