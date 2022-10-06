@@ -14,10 +14,10 @@
     <title>Crear</title>
 </head>
 <body>
-<div class="HomeV2">
+<div>
     <h4 class="sombraTexto sizeText">Productores</h4>
-    <hr />
-    <div class="row">
+    <div class="row HomeV2">
+        <hr />
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,13 +28,10 @@
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Crear" class="btn botonCrearV2" />
+                    <a class="btn botonVolver" asp-action="Index">Volver a la lista</a>
                 </div>
             </form>
         </div>
-    </div>
-
-    <div>
-        <a class="btn botonVolver" asp-action="Index">Volver a la lista</a>
     </div>
 </div>
 </body>

@@ -30,10 +30,10 @@
   </div>
 </div>
 
-<div class="HomeV2">
+<div>
     <h4 class="sombraTexto sizeText">Alquiler</h4>
-    <hr />
-    <div class="row">
+    <div class="row HomeV2">
+      <hr />
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -50,25 +50,22 @@
                 <div class="form-group">
                     <input type="submit" value="Crear" class="btn botonCrearV2" />
                     <button type="button" class="btn botonVolver" onclick="CancelRental();">Cancelar Alquiler</button>
+                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      <span class="button-content">Pelicula</span></button> 
                 </div>
             </form>
-               @* Table *@
+        </div>
+          @* Table *@
               <table class="table marginTable">
                 <thead>
                       <tr>
                         <th>Titulo de la pelicula</th>
-                          <th>
-                            <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                              <span class="button-content">Pelicula</span>
-                            </button> 
-                          </th>
                       </tr>
                 </thead>
                 <tbody id="tbody-peliculas">
                 </tbody>
               </table>
-                @* /table *@
-        </div>
+          @* /table *@
     </div>
 </div>
 
