@@ -11,14 +11,20 @@ function AgregarPeliculasDevolucion() {
         data: { MovieID: movieID },
         success: function (resultado) {
             if (resultado == true) {
-                console.log("Se guardo la pelicula correctamente");
-                alert("Se guardo la pelicula correctamente");
+                Swal.fire(
+                    'Perfecto!',
+                    'Se selecciono la pelicula correctamente!',
+                    'success'
+                )
                 $("#staticBackdrop").modal("hide");
                 SearchReturnTmp();
                 Location.href = "../../Return/Create"
             } else {
-                alert("No se pudo agregar la pelicula, intente nuevamente");
-                console.log("No se pudo agregar la pelicula, intente nuevamente");
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Oops...',
+                    text: 'No se pudo agregar la pelicula, intente nuevamente!'
+                })
             }
         },
         error: function(_result) {
@@ -35,7 +41,16 @@ function CancelReturn() {
         success: function(resultado){
             if(resultado = true)
             {
-                location.href = "../../Return/Index";
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Devolucion cancelada',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+                setTimeout(function(){
+                    location.href = "../../Return/Index";
+                }, 1010);
             }
         },
         error(result){
@@ -69,20 +84,40 @@ function SearchReturnTmp() {
 }
 
 function QuitarMovieReturn(id){
-    $.ajax({
-        type: "POST",
-        url: "../../Return/QuitarMovie",
-        data: {MovieID: id},
-        success: function(resultado){
-            if(resultado == true){
-                location.href = "../../Return/Create";
-            }
-        },
-        error(result){
-            
-        }
-    })
-}
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+        
+        swalWithBootstrapButtons.fire({
+            title: 'Estas segur@?',
+            text: "Desea eliminar la pelicula de la devolucion?!",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Si, Eliminar!',
+            cancelButtonText: 'No, cancelar!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "../../Return/QuitarMovie",
+                    data: {MovieID: id},
+                    success: function(resultado){
+                        if(resultado == true){
+                            location.href = "../../Return/Create";
+                        }
+                    }}),
+                swalWithBootstrapButtons.fire(
+                'Eliminado!',
+                'La pelicula se elimino de la lista',
+                'success'
+                )}
+        })
+    }
 
 function SearchMovieReturn(ReturnID) {
     $('#tbody-peliculasReturn').empty();

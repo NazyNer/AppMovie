@@ -93,7 +93,7 @@ function QuitarMovie(id){
     
     swalWithBootstrapButtons.fire({
         title: 'Estas segur@?',
-        text: "Desea eliminar la pelicula del alquiler!",
+        text: "Desea eliminar la pelicula del alquiler?!",
         icon: 'question',
         showCancelButton: true,
         confirmButtonText: 'Si, Eliminar!',
