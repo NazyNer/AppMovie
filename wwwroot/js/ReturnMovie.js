@@ -11,14 +11,18 @@ function AgregarPeliculasDevolucion() {
         data: { MovieID: movieID },
         success: function (resultado) {
             if (resultado == true) {
-                Swal.fire(
-                    'Perfecto!',
-                    'Se selecciono la pelicula correctamente!',
-                    'success'
-                )
                 $("#staticBackdrop").modal("hide");
-                SearchReturnTmp();
-                Location.href = "../../Return/Create"
+                SearchMovieTmp();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Se selecciono la pelicula correctamente!',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+                setTimeout(function(){
+                    Location.href = "../../Return/Create"
+                }, 1010);
             } else {
                 Swal.fire({
                     icon: 'warning',

@@ -195,7 +195,6 @@ namespace AppMovie.Controllers
         public JsonResult AgregarPeliculas(int MovieID)
         {
             var resultado = true;
-
             using (var transaccion = _context.Database.BeginTransaction())
             {
                 try

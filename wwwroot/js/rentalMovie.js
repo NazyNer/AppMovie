@@ -11,14 +11,18 @@ function AgregarPeliculas() {
         data: { MovieID: movieID },
         success: function (resultado) {
             if (resultado == true) {
-                Swal.fire(
-                    'Perfecto!',
-                    'Se guardo la pelicula correctamente!',
-                    'success'
-                )
-                SearchMovieTmp();
                 $("#staticBackdrop").modal("hide");
-                Location.href = "../../Rental/Create"
+                SearchMovieTmp();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Se guardo la pelicula correctamente!',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+                setTimeout(function(){
+                    location.href = "../../Rental/Create";
+                }, 1010);
             } else {
                 Swal.fire({
                     icon: 'warning',

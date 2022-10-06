@@ -360,7 +360,9 @@ th, td{
 
 .marginTable{
   border-radius: 10px;
-  margin-top: 6px;
+  width: auto;
+  margin: 0;
+  border-collapse: inherit;
 }
 
 .button {
