@@ -17,7 +17,7 @@ namespace AppMovie.Models
         public virtual Partner? Partner { get; set; }
 
 
-
+        
         public virtual ICollection<ReturnDetail>? ReturnDetails { get; set; }
   }
 }

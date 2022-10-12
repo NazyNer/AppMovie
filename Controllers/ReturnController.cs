@@ -21,7 +21,7 @@ namespace AppMovie.Controllers
         // GET: Return
         public async Task<IActionResult> Index()
         {
-            var appMovieContext = _context.Return.Include(r => r.Partner);
+            var appMovieContext = _context.Return?.Include(r => r.Partner);
             return View(await appMovieContext.ToListAsync());
         }
 
@@ -48,7 +48,7 @@ namespace AppMovie.Controllers
         public IActionResult Create()
         {
             ViewData["PartnerID"] = new SelectList(_context.Partner, "PartnerID", "PartnerName");
-            ViewData["MovieID"] = new SelectList(_context.Movie.Where(x => x.estaAlquilada == true), "MovieID", "MovieName");
+            ViewData["MovieID"] = new SelectList(_context.Movie?.Where(x => x.estaAlquilada == true), "MovieID", "MovieName");
             return View();
         }
 
@@ -78,10 +78,10 @@ namespace AppMovie.Controllers
                             MovieID = item.MovieID,
                             MovieName = item.MovieName
                         };
-                        _context.ReturnDetail.Add(details);
+                        _context.ReturnDetail?.Add(details);
                         _context.SaveChanges();
                     }
-                    _context.ReturnDetailTemp.RemoveRange(moviesTemp);
+                    _context.ReturnDetailTemp?.RemoveRange(moviesTemp);
                     _context.SaveChanges();
                     transaccion.Commit();
                     
@@ -97,7 +97,7 @@ namespace AppMovie.Controllers
             
             ViewData["PartnerID"] = new SelectList(_context.Partner, "PartnerID", "PartnerName", Return.PartnerID);
             ViewData["MovieID"] = new SelectList(_context.Movie, "MovieID", "MovieName");
-            ViewData["MovieID"] = new SelectList(_context.Movie.Where(x => x.estaAlquilada == true), "MovieID", "MovieName");
+            ViewData["MovieID"] = new SelectList(_context.Movie?.Where(x => x.estaAlquilada == true), "MovieID", "MovieName");
             return View(Return);
         }
 
@@ -220,7 +220,7 @@ namespace AppMovie.Controllers
                         MovieID = movie.MovieID,
                         MovieName = movie.MovieName
                     };
-                    _context.ReturnDetailTemp.Add(movieTemp);
+                    _context.ReturnDetailTemp?.Add(movieTemp);
                     _context.SaveChanges();
                     transaccion.Commit();
                 }
@@ -230,7 +230,7 @@ namespace AppMovie.Controllers
                     resultado = false;
                 }
             }
-            ViewData["MovieID"] = new SelectList(_context.Movie.Where(x => x.estaAlquilada == true), "MovieID", "MovieName");
+            ViewData["MovieID"] = new SelectList(_context.Movie?.Where(x => x.estaAlquilada == true), "MovieID", "MovieName");
             return Json(resultado);
         }
 
@@ -251,7 +251,7 @@ namespace AppMovie.Controllers
                         _context.SaveChanges();
                     }
 
-                    _context.ReturnDetailTemp.RemoveRange(returnTemp);
+                    _context.ReturnDetailTemp?.RemoveRange(returnTemp);
                     _context.SaveChanges();
                     transaccion.Commit();
 
@@ -277,7 +277,7 @@ namespace AppMovie.Controllers
                     _context.SaveChanges();
 
                     var returnTemp = (from a in _context.ReturnDetailTemp where a.MovieID == MovieID select a).SingleOrDefault();
-                    _context.ReturnDetailTemp.Remove(returnTemp);
+                    _context.ReturnDetailTemp?.Remove(returnTemp);
                     _context.SaveChanges();
 
                     transaccion.Commit();
