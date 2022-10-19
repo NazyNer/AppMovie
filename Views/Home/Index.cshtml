@@ -1,6 +1,46 @@
 ﻿@{
     ViewData["Title"] = "Inicio";
 }
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Jurassic World 3</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe width="466" height="480" src="https://www.youtube.com/embed/9m9yRauMJIQ" title="JURASSIC WORLD: DOMINION – Tráiler Oficial (Universal Pictures) HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Shirley</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe width="466" height="480" src="https://www.youtube.com/embed/uL9liCVBZcE" title="SHIRLEY - Trailer Subtitulado Español Latino 2020 Elisabeth Moss" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">MES FRERES ET MOI</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe width="466" height="480" src="https://www.youtube.com/embed/Zwp4we9aIxY" title="MES FRERES ET MOI - Officiële Belgische trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="Home">
   <div class="text-center">
     <div class="Top3">
@@ -23,7 +63,8 @@
         <div class="dorso top1D">
           <h3>JW 3</h3>
           <p>Ver Trailer</p>
-          <button onclick="Ver1();">Ver</button>
+          <button data-bs-toggle="modal" href="#exampleModalToggle" role="button">Ver</button>
+          @* <button onclick="Ver1();">Ver</button> *@
         </div>
       </div>
     </div>
@@ -38,7 +79,8 @@
         <div class="dorso top2D">
           <h3>Shirley</h3>
           <p>Ver Trailer</p>
-          <button onclick="Ver2();">Ver</button>
+          <button data-bs-toggle="modal" href="#exampleModalToggle2" role="button">Ver</button>
+          @* <button onclick="Ver2();">Ver</button> *@
         </div>
       </div>
     </div>
@@ -53,7 +95,8 @@
         <div class="dorso top3D">
           <h3>Mes frères et moi</h3>
           <p>Ver Trailer</p>
-          <button onclick="Ver3();">Ver</button>
+          <button data-bs-toggle="modal" href="#exampleModalToggle3" role="button">Ver</button>
+          @* <button onclick="Ver3();">Ver</button> *@
         </div>
       </div>
     </div>
@@ -64,7 +107,7 @@
   @* /Cards *@
 
 <script>
-  function Ver1() {
+@* function Ver1() {
     window.location.assign("https://www.youtube.com/watch?v=9m9yRauMJIQ&t=10s&ab_channel=UniversalSpain");
 }
 function Ver2() {
@@ -72,5 +115,5 @@ function Ver2() {
 }
 function Ver3() {
     window.location.assign("https://www.youtube.com/watch?v=Zwp4we9aIxY&ab_channel=SeptemberFilmDistribution");
-}
+} *@
 </script>
