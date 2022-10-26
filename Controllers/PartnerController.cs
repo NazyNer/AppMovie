@@ -141,8 +141,8 @@ namespace AppMovie.Controllers
         }
 
         // POST: Partner/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        // [HttpPost]
+        // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var partner = await _context.Partner.FindAsync(id);
