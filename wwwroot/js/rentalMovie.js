@@ -152,3 +152,28 @@ function SearchMovie(rentalID) {
         }
     })
 }
+
+function forzarLimpiezaTabla() {
+    $.ajax({
+        type: "POST",
+        url: "../../Rental/forzarLimpiezaTabla",
+        data: {},
+        success: function(resultado){
+            if(resultado = true)
+            {
+            Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Limpieza realizada',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+            setTimeout(function(){
+                location.href = "../../Rental/Create";
+            }, 1010);
+        }
+        error(result);
+
+        }
+    })
+}

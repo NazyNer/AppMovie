@@ -158,6 +158,9 @@ namespace AppMovie.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var movie = await _context.Movie.FindAsync(id);
+            if(movie.estaAlquilada == true){
+                return RedirectToAction(nameof(Index));
+            }
             if (movie != null)
             {
                 var movieAlquilada = (from a in _context.RentalDetail where a.MovieID == id select a).Count();
@@ -169,7 +172,7 @@ namespace AppMovie.Controllers
                 else
                 {
                     movie.IsDeleted = true;
-                    movie.MovieName = "Eliminada";
+                    movie.MovieName = movie.MovieName + " (Eliminada)";
                     _context.Update(movie);
                     await _context.SaveChangesAsync();
                 }

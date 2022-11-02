@@ -321,6 +321,23 @@ namespace AppMovie.Controllers
 
             return Json(resultado);      
         }
+        public JsonResult forzarLimpiezaTabla(){
+            var resultado = true;
+            using (var transaccion = _context.Database.BeginTransaction())
+            {
+                try{
+                    _context.Database.ExecuteSqlRaw("TRUNCATE TABLE [RentalDetailTemp]");
+                    _context.SaveChanges();
+                    transaccion.Commit();
+                }
+                catch (System.Exception){
+                    transaccion.Rollback();
+                    resultado = false;
+                }
+            }   
+
+            return Json(resultado);      
+        }
         
         private bool RentalExists(int id)
         {
